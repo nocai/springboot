@@ -1,0 +1,7 @@
+# MyBatis
+#mybatis:
+#    typeAliasesPackage: com.example.demo.domain.entity
+#    mapperLocations: classpath*:com/example/demo/domain/entity/*.xml
+
+#    configLocation: classpath:/mybatis-config.xml
+

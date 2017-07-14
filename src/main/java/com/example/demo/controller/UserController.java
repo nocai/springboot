@@ -1,29 +1,28 @@
 package com.example.demo.controller;
 
 import com.example.demo.domain.entity.User;
-import com.example.demo.service.HelloService;
 import com.example.demo.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.Arrays;
 import java.util.List;
 
 @RestController
-public class HelloController {
-    @Autowired
-    private HelloService helloService;
+@RequestMapping("/users")
+public class UserController {
     @Autowired
     private UserService userService;
 
-    @RequestMapping("/hello")
-    public String index() {
+    @RequestMapping
+    public List<User> users() {
         User user = this.userService.getById(1);
 //        List<User> users = this.userService.getByAge(1);
         System.out.println(user);
+        user.setName("test2");
 //        System.out.println(users);
-        System.out.println("a");
-        return this.helloService.hello();
+//        this.userService.update(user);
+        return Arrays.asList(new User[]{user});
     }
-
 }
