@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RestController
 public class HelloController {
     @Autowired
@@ -17,7 +19,7 @@ public class HelloController {
     @RequestMapping("/hello")
     public String index() {
         User user = this.userService.getById(1);
-//        List<User> users = this.userService.getByAge(1);
+        List<User> users = this.userService.getByAge(null);
         System.out.println(user);
 //        System.out.println(users);
         System.out.println("a");

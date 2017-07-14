@@ -17,12 +17,12 @@ public class UserController {
 
     @RequestMapping
     public List<User> users() {
-        User user = this.userService.getById(1);
-//        List<User> users = this.userService.getByAge(1);
-        System.out.println(user);
-        user.setName("test2");
+//        User user = this.userService.getById(1);
+        List<User> users = this.userService.getByAge(10);
+//        System.out.println(user);
+//        user.setName("test2");
 //        System.out.println(users);
 //        this.userService.update(user);
-        return Arrays.asList(new User[]{user});
+        return users;
     }
 }
