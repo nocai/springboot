@@ -1,4 +1,4 @@
-package com.example.demo.domain.mapper;
+package com.example.demo.domain;
 
 import org.mybatis.spring.SqlSessionTemplate;
 
@@ -6,7 +6,7 @@ import javax.annotation.Resource;
 import java.io.Serializable;
 
 /**
- * MyBatisMapper基类.所有实体用mybatis-generator生成对应的entity+xxxMapper.xml文件<br/>
+ * MyBatisMapper基类.所有实体用mybatis-generator生成对应的entity+xxxMapper.xml文件，dao无需生成，BaseDao已实现了<br/>
  * XxxMapper类手写，继承此类即可。如：
  *
  * <pre>
@@ -23,6 +23,9 @@ public class MyBatisMapper<T extends Serializable, ID extends Serializable> impl
     @Resource
     protected SqlSessionTemplate sqlSessionTemplate;
 
+    /**
+     * 子类实现必须与其对应的xml文件同名，且在同一个包下面。不然namespace路径不正确
+     */
     protected final String namespace = this.getClass().getName() + ".";
 
     private final String _INSERT = namespace + "insert";

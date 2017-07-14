@@ -1,4 +1,4 @@
-package com.example.demo.domain.mapper;
+package com.example.demo.domain;
 
 import java.io.Serializable;
 
