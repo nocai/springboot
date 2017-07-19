@@ -1,4 +1,4 @@
-package com.example.demo.service;
+package com.example.demo.service.impl;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -10,9 +10,9 @@ public class HelloService {
     private static Logger logger = LoggerFactory.getLogger(HelloService.class);
     @Value(value = "${ZF_CODE}")
     private String zfCode;
+
     public String hello() {
-        System.out.println("zfCode = " + zfCode);
-        logger.info("zfCode = " + zfCode);;
+        logger.info("zfCode = " + zfCode);
         return "aaabccc";
     }
 }

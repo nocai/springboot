@@ -1,8 +1,10 @@
 package com.example.demo;
 
-import org.mybatis.spring.annotation.MapperScan;
+import com.example.demo.mail.MailProperties;
+import org.springframework.boot.Banner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
@@ -10,11 +12,12 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 @EnableAutoConfiguration
 @ComponentScan
-//@MapperScan("com.example.demo.domain.entity")
+@EnableConfigurationProperties
 public class DemoApplication {
-
     public static void main(String[] args) {
-
-        SpringApplication.run(DemoApplication.class, args);
+        SpringApplication app = new SpringApplication(DemoApplication.class);
+        app.setBannerMode(Banner.Mode.OFF);
+        app.run(args);
+//        SpringApplication.run(DemoApplication.class, args);
     }
 }
